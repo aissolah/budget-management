@@ -1,0 +1,17 @@
+{% extends 'budget/base.html' %}
+{% block content %}
+  <h1>Budget : {{ budget.name }}</h1>
+  <ul class="list">
+    {% for charge in charges %}
+      <li>
+        <div>{{ charge.name|upper }} - {{ charge.amount }} €</div>
+        <div>{{ charge.description|truncatechars:50}}</div>
+      </li>
+    {% empty %}
+      <li>You haven't set any charge yet.</li>
+    {% endfor %}
+  </ul>
+  <div>initial Amount : {{ budget.initial_amount }}</div>
+  <div>Current balance : {{ budget.total_amount }}</div>
+  <div>Charges to come : {{ budget.initial_amount }}
+{% endblock %}
