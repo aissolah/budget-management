@@ -1,12 +1,6 @@
 {% extends 'budget/base.html' %}
 {% block content %}
-  <h1>Welcome home !</h1>
-  <ul class="budgets">
-    {% for budget in budgets %}
-      <li>{{ budget.name }}  {% if budget.month and budget.year %} ({{ budget.month }}/{{ budget.year }}){% endif %}</li>
-    {% empty %}
-      <li>You have no budgets.</li>
-    {% endfor %}
-  </ul>
+  <h1>Welcome to the budget application, please log in to see and edit your budgets.</h1>
+  
 {% endblock %}
 

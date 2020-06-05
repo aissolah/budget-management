@@ -10,6 +10,17 @@
     <title>Budget manager</title>
   </head>
   <body>
+    <a href="{% url 'home' %}">Home</a>
+    {% if user.is_authenticated %}
+      Logged in as {{ user.username }} 
+      <form method="POST" action="{% url 'logout_user' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    {% else %}
+      <a href="{% url 'signup_user' %}">Sign up</a> - <a href="{% url 'login_user' %}">Login</a><br/><br/>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
 
