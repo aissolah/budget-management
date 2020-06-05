@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 
 
-
+#testestestesttse
 # ***Signup the user***
 def signup_user(request):
 	if request.method == "GET":
